@@ -36,7 +36,6 @@ public class StoryDataLoader implements CommandLineRunner
     {
         teamProjectStory();
         createStoryMomChild();
-        concertStory();
     }
 
     private void createStoryMomChild()
@@ -170,18 +169,6 @@ public class StoryDataLoader implements CommandLineRunner
         dialogueRepository.saveAll(dialogues);
         questionRepository.saveAll(questions);
 
-    }
-
-    private void concertStory()
-    {
-        String imgsrc = "/images/concert-story.png";
-
-        Story story1 = new Story();
-        story1.setTitle("My Crazy Test Story");
-        story1.setDescription("Coming soon...");
-        story1.setCategory("Drama");
-        story1.setImage(imgsrc);
-        storyRepository.save(story1);
     }
 
     private  void teamProjectStory()

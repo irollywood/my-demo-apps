@@ -10,7 +10,7 @@
 <body>
 <div class="phone-frame">
     <div class="screen">
-        <img alt="banner" src="/images/header-banner.png" width="38%">
+        <h1>My Story App</h1>
         <div class="chat-box">
             <div th:each="line : ${dialogue}"
                  th:classappend="${line.speaker == 'User' ? 'chat user' : 'chat npc'}">

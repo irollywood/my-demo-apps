@@ -9,6 +9,7 @@
 <div class="phone-frame">
     <div class="screen">
         <div class="chat-box">
+            <h1>My Story App</h1>
             <h2>Fill out the fields below:</h2>
             <form th:action="@{/dialogue/build}" th:object="${questionform}" method="post">
                 <div class="chat-message animate" th:each="q, iterStat : *{questions}">
