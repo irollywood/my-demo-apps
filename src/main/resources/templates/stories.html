@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Script And Tell</title>
+  <link rel="stylesheet" th:href="@{/css/style-mobile.css}">
+  <link rel="stylesheet" th:href="@{/css/style-laptop.css}">
+</head>
+<body>
+<div class="phone-frame">
+  <div class="screen" style="align-items: center">
+    <img alt="banner" src="/images/header-banner.png" width="38%">
+    <h2>Select a Story</h2>
+    <div class="chat-box">
+      <div class="dialogue-list">
+        <div class="dialogue-card" th:each="story : ${stories}">
+          <a th:href="@{/story/questions/{id}(id=${story.id})}">
+            <img alt="title" th:src="${story.image}">
+            <h3 th:text="${story.description}"></h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

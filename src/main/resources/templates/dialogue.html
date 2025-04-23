@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Script And Tell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/style-mobile.css}">
+    <link rel="stylesheet" th:href="@{/css/style-laptop.css}">
+    <script th:src="@{/js/script.js}" defer></script>
+</head>
+<body>
+<div class="phone-frame">
+    <div class="screen">
+        <img alt="banner" src="/images/header-banner.png" width="38%">
+        <div class="chat-box">
+            <div th:each="line : ${dialogue}"
+                 th:classappend="${line.speaker == 'User' ? 'chat user' : 'chat npc'}">
+                <img alt="avatar" th:src="${line.avatar}" th:classappend="${line.speaker == 'User' ? 'avatar user' : 'avatar npc'}">
+                <p th:text="${line.line}"></p>
+            </div>
+        </div>
+        <a th:href="@{/stories}"><button type="button" class="btn">Back to Scripts</button></a>
+    </div>
+</div>
+</body>
+</html>

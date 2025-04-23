@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Script And Tell</title>
+    <link rel="stylesheet" th:href="@{/css/style-mobile.css}">
+    <link rel="stylesheet" th:href="@{/css/style-laptop.css}">
+</head>
+<body>
+<div class="phone-frame">
+    <div class="screen">
+        <div class="chat-box">
+            <h2>Fill out the fields below:</h2>
+            <form th:action="@{/dialogue/build}" th:object="${questionform}" method="post">
+                <div class="chat-message animate" th:each="q, iterStat : *{questions}">
+                    <input type="hidden" th:field="*{questions[__${iterStat.index}__].dialogue}">
+                    <input type="hidden" th:field="*{questions[__${iterStat.index}__].id}">
+                    <input type="text" th:field="*{questions[__${iterStat.index}__].answer}" value="" th:placeholder="${q.question}">
+                </div>
+                <br />
+                <input type="submit" class="btn" value="Submit" />
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
